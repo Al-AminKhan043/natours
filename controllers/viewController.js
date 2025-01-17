@@ -37,7 +37,7 @@ if(! tour)
 })
 
 exports.login = catchAsync(async (req, res, next) => {
-    console.log("In login route");
+    // console.log("In login route");
     res.status(200).render('login', {
       title: 'Log into your account'
     });

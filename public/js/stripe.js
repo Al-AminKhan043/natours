@@ -106,16 +106,16 @@ export const bookTour = async (tourId) => {
   try {
     // 1) Get checkout session from API
     const { data } = await axios.get(
-      `http://127.0.0.1:3000/api/v1/booking/checkout-session/${tourId}`
+      `/api/v1/booking/checkout-session/${tourId}`
     );
 
-    console.log('Session Data:', data); // Log the session data returned from the API
+    // console.log('Session Data:', data); // Log the session data returned from the API
 
     if (data.status === 'success' && data.session) {
       // 2) Redirect to the checkout URL manually
       const checkoutUrl = data.session.url; // Ensure your API includes a 'url' field in the session object
       if (checkoutUrl) {
-        console.log('Redirecting to:', checkoutUrl); // Log the URL for debugging
+        // console.log('Redirecting to:', checkoutUrl); // Log the URL for debugging
         window.location.href = checkoutUrl;
       } else {
         showAlert('error', 'Checkout URL not found!');

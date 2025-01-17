@@ -8,7 +8,7 @@
     "start:prod": "cross-env NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch": "esbuild ./public/js/index.js --bundle --outfile=./public/js/bundle.js --watch",
-    "build": "esbuild ./public/js/index.js --bundle --outfile=./public/js/bundle.js"
+    "build": "esbuild ./public/js/index.js --bundle --outfile=./public/js/bundle.js --minify"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "@stripe/stripe-js": "^5.5.0",
     "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
+    "compression": "^1.7.5",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "esbuild": "0.24.2",

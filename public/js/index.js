@@ -64,7 +64,7 @@ if (userPasswordForm)
         const { tourId } = e.target.dataset; // Get tourId from button's data attribute
     
         try {
-          console.log(tourId); 
+          // console.log(tourId); 
           await bookTour(tourId); // Call the bookTour function and wait for it to complete
           // Optionally, change the button text to something else if needed
         } catch (err) {
