@@ -1,4 +1,4 @@
-const { address } = require('faker/lib/locales/az');
+
 const mongoose = require('mongoose');
 const slugify=require('slugify');
 const validator=require('validator')
