@@ -18,6 +18,8 @@ const hpp = require('hpp');
 const viewRouter = require('./routes/viewRoutes');
 const cookieParser = require('cookie-parser');
 
+app.enable('trust proxy');
+
 // Helmet security headers middleware (apply early)
 app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
