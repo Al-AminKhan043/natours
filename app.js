@@ -3,6 +3,7 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 const morgan = require('morgan');
+const cors=require('cors');
 const compression=require('compression')
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
@@ -51,6 +52,9 @@ app.use(helmet.contentSecurityPolicy({
 
 app.use(compression());
 
+app.use(cors());
+
+app.options('*',cors());
 
 // Rate limiter (before routing)
 const limiter = rateLimit({
