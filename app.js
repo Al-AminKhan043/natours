@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const morgan = require('morgan');
 const cors=require('cors');
-const compression=require('compression')
+const bodyParser = require('body-parser');
+const compression =require('compression')
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 const bookingController=require('./controllers/bookingController');
@@ -66,7 +67,7 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 
-app.post('/webhook-checkout',express.raw({type:'application/json'}),bookingController.webhookheckout)
+// app.post('/webhook-checkout', bodyParser.raw({type:'application/json'}),bookingController.webhookheckout)
 
 // Body parsers for JSON and URL-encoded data
 app.use(express.json({ limit: '10kb' }));
